@@ -12,13 +12,13 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@threemonkeys.dev",
-    href: "mailto:hello@threemonkeys.dev",
+    value: "threemonkeys009@gmail.com",
+    href: "mailto:threemonkeys009@gmail.com",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "Pune, India",
+    value: "Wardha, India",
     href: "#map",
   },
   {
@@ -94,7 +94,7 @@ export default function ContactPage() {
             >
               <iframe
                 title="ThreeMonkeys Location - Pune, India"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.68079518!2d73.69!3d18.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251453.79379489333!2d78.02966006683731!3d20.745291663559408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd531ce1a4c2e7d%3A0x5f09a93ca8e0270a!2sWardha%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="220"
                 style={{
