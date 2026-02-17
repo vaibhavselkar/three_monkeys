@@ -5,16 +5,17 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json()
+    const { name, mobile, email, message } = await req.json()
 
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "Costumer@resend.dev",
       to: "threemonkeys009@gmail.com",
       reply_to: email,
       subject: `New Contact Form Message from ${name}`,
       html: `
         <h2>New Contact Message</h2>
         <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Mobile No:</strong> ${mobile}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>

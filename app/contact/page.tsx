@@ -27,6 +27,7 @@ const contactInfo = [
 export default function ContactPage() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [mobile, setMobile] = useState("")
   const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<string | null>(null)
@@ -150,6 +151,15 @@ export default function ContactPage() {
                   placeholder="Your Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="rounded-lg border p-3"
+                />
+
+                <input
+                  type="mobile"
+                  placeholder="Your Mobile Number"
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
                   required
                   className="rounded-lg border p-3"
                 />
