@@ -1,7 +1,14 @@
 "use client"
 
 import { useState } from "react"
+import type { Metadata } from "next"
 import { Mail, MapPin, ArrowUpRight, Clock } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Contact Us | ThreeMonkeys",
+  description:
+    "Get in touch with ThreeMonkeys. Let us turn your idea into reality with our software development expertise.",
+}
 
 const contactInfo = [
   {
@@ -89,7 +96,6 @@ export default function ContactPage() {
               {contactInfo.map((item) => {
                 const Wrapper = item.href ? "a" : "div"
                 const wrapperProps = item.href ? { href: item.href } : {}
-
                 return (
                   <Wrapper
                     key={item.label}
@@ -99,7 +105,6 @@ export default function ContactPage() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                       <item.icon className="h-5 w-5 text-primary" />
                     </div>
-
                     <div className="flex-1">
                       <p className="text-xs uppercase text-muted-foreground">
                         {item.label}
@@ -108,7 +113,6 @@ export default function ContactPage() {
                         {item.value}
                       </p>
                     </div>
-
                     {item.href && (
                       <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-100" />
                     )}
