@@ -4,6 +4,8 @@ import { Inter, JetBrains_Mono } from "next/font/google"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Analytics } from "@vercel/analytics/react";
+import Chatbot from "@/components/Chatbot";
+
 
 import "./globals.css"
 
@@ -36,9 +38,11 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased">
         <Navbar />
-        <main>{children}</main>
+        <main>{children}
+        </main>
         <Footer />
         <Analytics />
+        <Chatbot />
       </body>
     </html>
   )
