@@ -135,26 +135,38 @@ Answer:
 `;
 
     const response = await fetch(
-      "https://api.groq.com/openai/v1/chat/completions",
-      {
+        "https://api.groq.com/openai/v1/chat/completions",
+        {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
-          "Content-Type": "application/json"
+            Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "llama-3.1-8b-instant",
-          messages: [{ role: "user", content: prompt }],
-          max_tokens: 300,
-          temperature: 0.3
+            model: "llama-3.1-8b-instant",
+            messages: [{ role: "user", content: prompt }],
+            max_tokens: 300,
+            temperature: 0.3
         })
-      }
+        }
     );
-
+    
     const data = await response.json();
-
+    
+    // 🔥 Debug log
+    console.log("Groq Raw Response:", data);
+    
+    // If Groq returns error
+    if (!response.ok || !data.choices) {
+        console.error("Groq Error Response:", data);
+        return NextResponse.json(
+        { reply: "AI service is temporarily unavailable." },
+        { status: 500 }
+        );
+    }
+    
     return NextResponse.json({
-      reply: data.choices[0].message.content
+        reply: data.choices[0].message.content
     });
   } catch (error) {
     console.error("Chat API Error:", error);
